@@ -36,4 +36,13 @@ class ImageService {
       return null;
     }
   }
+
+  static Future<bool> pingServer() async {
+    try {
+      final response = await http.get(Uri.parse('http://127.0.0.1:5000/ping'));
+      return response.statusCode == 200;
+    } catch (e) {
+      return false; // Return false if there is an error
+    }
+  }
 }

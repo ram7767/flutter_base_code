@@ -164,10 +164,10 @@ packages:
     dependency: "direct main"
     description:
       name: http
-      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      sha256: b9c29a161230ee03d3ccf545097fccd9b87a5264228c5d348202e0f0c28f9010
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.6"
+    version: "1.2.2"
   http_parser:
     dependency: transitive
     description:
@@ -232,6 +232,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
+  image_picker_web:
+    dependency: "direct main"
+    description:
+      name: image_picker_web
+      sha256: "2792196db19157d9af2903310ad99d42270841b872c51977b984d06e63bdb3ce"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.1"
   image_picker_windows:
     dependency: transitive
     description:

@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   html.File? _imageFile; // Use html.File for web
   bool _isLoading = false;
   Map<String, dynamic>? _jsonResponse; // Holds the API response
+  bool _isServerConnected = false; // Server connection status
 
   Future<void> _pickImage() async {
     final picker = ImagePicker();
@@ -50,6 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  Future<void> _pingServer() async {
+    final isConnected = await ImageService.pingServer();
+    setState(() {
+      _isServerConnected = isConnected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,12 +76,21 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Text('Select Image'),
             ),
             const SizedBox(height: 20),
-            _isLoading
-                ? const CircularProgressIndicator()
-                : ElevatedButton(
-                    onPressed: _submitImage,
-                    child: const Text('Submit'),
-                  ),
+            ElevatedButton(
+              onPressed: _submitImage,
+              child: _isLoading
+                  ? const CircularProgressIndicator()
+                  : const Text('Submit'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _pingServer,
+              child: const Text('Ping Server'),
+            ),
+            const SizedBox(height: 20),
+            _isServerConnected
+                ? Icon(Icons.check_circle, color: Colors.green, size: 40)
+                : Icon(Icons.cancel, color: Colors.red, size: 40),
             const SizedBox(height: 20),
             // Display JSON response as a table if available
             _jsonResponse != null
