@@ -20,7 +20,7 @@ class ImageService {
       final base64String = base64Image.split(',').last;
 
       final response = await http.post(
-        Uri.parse('http://127.0.0.1:5000/upload'),
+        Uri.parse('https://af59-14-98-153-162.ngrok-free.app/upload'),
         body: json.encode({'image': base64String}),
         headers: {'Content-Type': 'application/json'},
       );
@@ -39,7 +39,8 @@ class ImageService {
 
   static Future<bool> pingServer() async {
     try {
-      final response = await http.get(Uri.parse('http://127.0.0.1:5000/ping'));
+      final response = await http
+          .get(Uri.parse('https://af59-14-98-153-162.ngrok-free.app/ping'));
       return response.statusCode == 200;
     } catch (e) {
       return false; // Return false if there is an error

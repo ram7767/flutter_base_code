@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "480441429440",
+    "project_id": "recruiter-toolkit-ai",
+    "storage_bucket": "recruiter-toolkit-ai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480441429440:android:a83c0ce56faaf321552c25",
+        "android_client_info": {
+          "package_name": "com.recruiter.ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdCldnhIeqLVTGqq5B9dAa04F2y8eqb0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480441429440:android:e2144569d4f4ca3b552c25",
+        "android_client_info": {
+          "package_name": "com.recruiter.toolkit.ai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdCldnhIeqLVTGqq5B9dAa04F2y8eqb0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
